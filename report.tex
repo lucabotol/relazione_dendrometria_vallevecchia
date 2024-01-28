@@ -1,0 +1,224 @@
+
+
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fourth page - Start of the thesis
+\setcounter{page}{3} 
+\input{corpo/Introduzione}
+\input{corpo/descrizionerilievi}
+\input{corpo/elaborazionedati}
+\input{corpo/risultati}
+\input{corpo/conclusioni}
+
+
+
+
+% \section{Maximum force}
+% The contact force between the probe tip and the measured surfaced is the beginning value for the fulfilling of the 1 DoF requirements. This force must be compliant with a trade off: a high value avoids the lost of contact, but on the other hand it may produce the scraping of the surface. \\
+% The contact is ruled by the Hertzian theory, with the surface modelled as a plane and the tip as a ball.
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[scale=0.3]{immagini/sphere_hertz.png}
+% 	\caption{Detailed representation of the ball-plane contact, source \cite{hertzian}}
+% 	\label{sphere_plane_hertz}
+% \end{figure} \noindent
+% The maximum pressure exchanged between the two surfaces is: 
+% \begin{equation}
+%     p_0=\sqrt[3]{\frac{6 E_m^2 F_n}{\pi ^3 R^2}} \ \ \ (\si{\mega\pascal})
+%     \label{p0}
+% \end{equation}
+% With: $\text{Em}=\left(\frac{1-\text{$\nu $1}^2}{\text{E1}}+\frac{1-\text{$\nu $2}^2}{\text{E2}}\right)^{-1}$, $E_1$ (\si{\mega\pascal}) and $\nu_1$ the Young's module and Poisson's ratio of the plane material, $E_2$ (\si{\mega\pascal}) and $\nu_2$ the ones of the ball material, R the ball radius (\si{\milli\meter}), $F_n$ the contact force (\si{\newton}).\\
+% The yielding of the surface is achieved when the pressure reaches the condition of:
+% \begin{equation}
+%     p_0 = c_Y \sigma_Y \ \ \ ; \ \ \ \sqrt[3]{\frac{6 E_m^2 F_n}{\pi ^3 R^2}} = c_Y \sigma_Y
+%     \label{yielding}
+% \end{equation}
+% With: $\sigma_Y$ the yielding stress (\si{\mega\pascal}), and $c_Y$ a correction coefficients. \\
+% In the case of our interest the contact happens between an aluminium plane ($E_1$=68.9 (\si{\giga\pascal}), $\nu_1$=0.32, $\sigma_Y$=276 (\si{\mega\pascal}), $c_Y$=1.6 (from the information which Dr. Pedrotti provided us)) and a ruby sphere ($E_2$=335 (\si{\giga\pascal}) and $\nu_1$=0.25) with R=2 (\si{\milli\meter}).\\
+% All that considered the maximum force to avoid yielding is:
+% \begin{equation}
+%     F_n=445 \ \ \ (\si{\milli \newton})
+%     \label{max_cont_force}
+% \end{equation}
+% This load, produces a not negligible modification of the surface because induces a displacement grater than the desired resolution. Since the component remains on the elastic range, and knowing the force-displacement analytical relationship, this modification may be compensated in the processing of the data once the applied force is known.
+
+% \section{Concepts to allow 1 DoF}
+% After the completion of the QFD, the functional decomposition and the creation of multiple concept variants, there is uncertainty on how to allow 1 DoF and remove the other for all the measurement range (1 \si{\milli\meter}). Four notch-hinges-based mechanisms are proposed: a 4 bar linkage, the single compound, a (Watt-type) 6 bar linkage, and the double compound rectilinear spring. The repeatability is ensured by the manufacturing of the mechanism with a wire EDM starting from a single metal workpiece. \\
+% Even if it is a very simple mechanism and uses a reduced quantity of material, the 4 bar linkage is not suitable because the coupler link moves following a circular trajectory: while it moves on the horizontal direction it also has a vertical displacement. The amount of the vertical motion depends on the length of the frame fixed links: the more they are long, the less the undesired displacement. Since the reduced dimensions is a requirement, then this proposal is discharged. \\
+% The single compound is not stable from the dynamical point of view. In fact, since the mechanism has two degrees of freedom, for a given input there is not an univocal configuration, and the frequency response is more difficult to be computed.\\
+% The Watt type 6 bar linkage is taken into account because, from what was study in previous courses, its main parameters (bar lengths and hinge positions) could be (relative) easily optimized to give a desired trajectory to one of its point. For this reason, this proposal is further investigated.\\
+% The double compound has a intrinsically suitable behaviour: the particular connection of bar ensures a linear movement of the central element while it avoids the undesired vertical ones, also when tangential forces acts on the probe. The possible drawbacks of this solution regarding the 6 bar link is an higher number of bars and so potential an higher weight.  
+
+% \section{Investigation of the Watt type 6 bar linkage}
+% The aim of this study is to define bar dimensions and hinge positions in order to ensure the linear movement of a desired point mounted on one of the bar, for all the measurement range.\\
+% This optimization follows the steps:
+% \begin{itemize}
+%     \item Build a parametric model of the system by defining in general coordinates hinge positions and bar lengths;
+%     \item Define of probe position on the mechanism;
+%     \item Write a kinematic relationship between one of the frame connected bar and the probe position;
+%     \item Write the desired function imposing that probe position moves on a straight line;
+%     \item Write the cost function as the difference between the theoretical and realized probe movement;
+%     \item Evaluate the cost function in a number of point between the input measurement range;
+%     \item Use a software to minimize the cost function acting on bar lengths and hinge positions.
+% \end{itemize}
+% Some constraints are also imposed: bars in the range between 100 (\si{\milli \meter}) and 200 (\si{\milli \meter}); hinges placed at (0,0), (xG,0), (xF,0) in order to be on the same line; internal angle of the dyads reasonable far from 180\si{\degree} to avoid singularities.\\
+% After some attempts of implementing this mechanism, also using different weight for the different constraints, none of the results are acceptable because they require too long or too short bars (which are difficult to produce practically) or the investigated point do not follow the desired trajectory.\\
+% Figure \ref{6_bar_linkage} shows one of the produced configuration and Figure \ref{6_bar_linkage_displ} the obtained displacement, which is far to be linear. 
+% \begin{figure}[H]
+% 	\centering
+% 	\subfloat[][\emph{}.\label{6_bar_linkage}]
+% 	{\includegraphics[scale=.5]{immagini/6_bar_linkage.png}} 
+% 	\subfloat[][\emph{}.\label{6_bar_linkage_displ}]
+% 	{\includegraphics[scale=.5]{immagini/6_bar_linkage_displ.png}} 
+%     \caption{Results of the optimization: a) is the proposed mechanism configuration; b) is the achieved displacement}
+% 	\label{6_bar_link}
+% \end{figure} \noindent
+% After all these considerations, the 6 bar proposal is discarded.
+
+% \section{Double compound rectilinear spring design}
+% To realize the desired mechanism, the double compound solution is chosen due its intrinsically ability to remove the lateral movement when an external input is applied.\\ 
+% Figure \ref{schema_compound} is a schema of the mechanism and the main dimensions used in the following points to report the designing process.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[scale=0.4]{immagini/schema_compound.png}
+%     \caption{Double compound schema}
+%     \label{schema_compound}
+% \end{figure}
+% \subsection{Vertical bar length and hinges stiffness}
+% Firstly, a model of the compound is produced in the Matlab Simulink\textsuperscript{\texttrademark} environment.\\
+% A parametric analysis to define the vertical bar lengths and the hinge stiffness is performed. 4 bar lengths and 6 stiffness are combined in simulations to carry out the maximum force imposed by the mechanism. The choice of the bar lengths range is not random, but came from a trade off: the more they are long the more is the measurement range but also weight and volume increases. The result of the simulation is reported in Figure \ref{parametric_plot}:
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[scale=0.3]{immagini/parametric_plot.png}
+%     \caption{Probe force as function of parametric stiffness and bars length}
+%     \label{parametric_plot}
+% \end{figure} \noindent
+% As could be seen, the force can be reduced by lowering the stiffness or increasing the bar length.\\
+% It must be noted that only hinge stiffness and $l_1$ modify the force, so the other parameters could be chosen according other requirements, for example the weight.\\
+% After this evaluation, the chosen bar length is $l_1$ = 63 (\si{\milli \meter}).\\
+% From the simulation, the maximum rotation of every hinge is measured. Its value is used in the following analysis. 
+
+% \subsection{Hinges design}
+% According to the chosen $l_1$ and the results of Figure \ref{parametric_plot}, the hinges have to be designed in order to have a stiffness in the range between 300$\div$450 (\si{\newton\milli\meter\per\radian}). These range is chosen to fulfil a trade off: the higher the stiffness, the higher the system resonance frequency but on the other hand the higher the probe force. This set is chosen to have a certain safety margin against yielding.\\
+% The hinge stiffness depends on its shape according the following relationship (see Table \ref{param_table} to the meaning of the symbols): 
+% \begin{equation}
+%         s=\frac{2 \ E \ bt \ t^{5/2}}{9 \pi ax^{1/2}}=\frac{2 \ E \ bt \ t^{5/2}}{9 \pi (\frac{bw-t}{2})^{1/2}} \ \ \ \ (\si{\newton \milli \meter \per \radian})
+%         \label{hinge_stiff}
+%     \end{equation}
+%     \begin{table}[H]
+%     \caption{Parameters used for the stiffness evaluation and their variation range}
+%         \centering
+%         \begin{tabular}{lccc}
+%         \toprule
+%              Parameter & & Range & M.U.\\ \midrule
+%              Young's module & \textit{E} & Aluminium, Spring Steel & (\si{\mega \pascal})\\
+%              Thickness & \textit{bt} & 4 $\div$ 5 & (\si{\milli \meter})\\
+%              Bar width & \textit{bw} &  2 $\div$ 5 & (\si{\milli \meter})\\
+%              Hinge minimum thickness & \textit{t} &  0.1 $\div$ 0.3 & (\si{\milli \meter})\\
+%              Hinge radius & \textit{ax} & & (\si{\milli \meter}) \\ \bottomrule
+%         \end{tabular}
+%         \label{param_table}
+%     \end{table} \noindent
+% Also the  hinges design relays on a parametric approach: a vector of values is created for each of the parameter of Eq. \ref{hinge_stiff} (see Table \ref{param_table} for the range). Then, for every combination, the realized stiffness and the maximum hinge thickness to resist to the rotation are computed:
+% \begin{gather}
+%     t_{MAX}= ax\left(\frac{3 \pi  \sigma_Y }{4 E (\beta +1)^{9/20} \theta }\right)^2 = \frac{bw-t_{MAX}}{2} \left(\frac{3 \pi  \sigma_Y }{4 E (\beta +1)^{9/20} \theta }\right)^2
+%     \label{t_max_1}
+% \end{gather}
+% Where $\theta$ is the maximum hinge rotation obtained by the simulation, and $\beta=\frac{t}{2 ax}=\frac{t}{bw-t}$.\\
+% Results are collected in a table like the one on Figure \ref{Table_T}:
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[scale=0.6]{immagini/Table_T.png}
+%     \caption{Part of the table collecting the combination of parameters considered in the evaluation of the stiffness and thickness of the hinges}
+%     \label{Table_T}
+% \end{figure}\noindent
+% After the generation phase, the table is sorted removing all the combination with stiffness out of the boundaries and thickness above the maximum.
+
+% \subsection{Dynamical design}
+% At this point, a series of configurations satisfying the static requirements are available. It is necessary to chose between them the best one according to the most important dynamical parameters: the resonance frequency (when for a reduced input a great output is produced).\\
+% The analytical formula to compute it is (from \cite{resonance_freq}): 
+% \begin{gather}
+%     \omega_n^2 = \frac{4s}{l_1^2\left(M_A+\frac{M_B}{2}+\frac{8M_C}{3}\right)} \ \ \ (\si{\square\radian\per\square\second})
+%         \label{resonance_freq}\\
+%     fn=\frac{\omega_n}{2 \pi} \ \ \ (\si{\hertz})
+%     \label{resonance_fre_hz}
+% \end{gather}
+% As can be seen, the frequency depends on mechanism mass, so bars length has to be defined. They are chosen to keep the compound mass and volume as short as possible: $l_3$ = 18 (\si{\milli \meter}), $l_2$ = 18 (\si{\milli \meter}), $l_4$ = 18 (\si{\milli \meter}). \\
+% The resonance frequency is computed for every combination of physical parameters. Then they are sorted, and the one with the highest resonance frequency is chosen. Since more than one combination have the same $\omega_c$ , then the final mechanism is the one with the smallest axial dimension. The chosen mechanism has: 
+% \begin{gather}
+%     \omega_c =  260 \ \ \ (\si{\radian\per\second})\\
+%     fn=41.5 \ \ \ (\si{\hertz})
+% \end{gather}
+% For characterizing the dynamical behaviour, another important parameter is hinge damping coefficients. 
+% \begin{gather}
+%     d = \zeta cc \ \ \ (\si{\newton\milli\meter\radian\per\second})\\
+%     cc = 2 \ M_{TOT} \ \omega_n \ \ \ (\si{\kilo\gram\radian\per\second})
+% \end{gather}
+% $\zeta$ depends on the chosen material, for aluminium it is $\zeta_{Al}=5\cdot 10^{-4}$ \\ \\ 
+% The value of the resonance frequency is validate with a modal simulation by another group member. From it, the results shows a resonance frequency of \mbox{$fn$=48.1 (\si{\hertz})}, which is compliant with the computed result. 
+
+% \subsection{Minimum time to perform a measurement} \label{T_meas}
+% The resonance frequency has a very strong practical implication, since it defines the maximum time to perform a measurement. Supposing to model the workpiece surface as a sine wave, giving a relative movement between it and the probe there is an harmonic input. If the repetition of the sine wave is fast, it may happen that its frequency reach the resonance one.\\  
+% Supposing for instance to measure a cylindrical component previously clamped with a mandrel. Its surface may be considered as made of three lobes, so 3 repetitions of a sine wave, as could be seen in the Figure \ref{sine_surface} (source \cite{sine_surface}).
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[scale=0.5]{immagini/sine_surface.jpg}
+%     \caption{FEM model of the deformation produced by a mandrel on a cylindrical workpiece, source \cite{sine_surface}}
+%     \label{sine_surface}
+% \end{figure} \noindent
+% The period of an oscillation is: 
+% \begin{equation}
+% T=\frac{T_{measurement}}{\# cycles}
+% \end{equation}
+% And so the frequency:
+% \begin{equation}
+%     f=\frac{1}{T}=\frac{\# cycles}{T_{measurement}} \Rightarrow T_{measurement}=\frac{\# cycles}{f}
+% \end{equation}
+% To be conservative and avoid the reaching of the resonance condition, the maximum allowable working frequency is set to be 1/10 of the double compound resonance one :
+% \begin{equation}
+%     f=\frac{f_n}{10} =\frac{\# cycles}{T_{measurement}} \Rightarrow T_{measurement} = \frac{ 10 \ \# cycles}{fn}
+% \end{equation}
+% Considering the actual resonance frequency, the minimum time to perform the measure is:
+% \begin{equation}
+%     T_{measurement}= \frac{10 \  \# \ cycles}{fn}=  \frac{10 \cdot 3}{41.5}=0.731 \ \ \ \ (\si{\second})
+% \end{equation}
+
+% \subsection{Maximum displacement and mechanical stopper}
+% Since hinges are dimensioned to effort only a finite rotation, mechanism movements has to be limited in order to avoid their yielding. The maximum allowable rotation is computed inverting Eq. \ref{t_max_1} . Then the maximum allowed displacement is:
+% \begin{equation}
+%     \text{disp}=2 \ l_1 \sin(\theta)=2.4 \ \ \ (\si{\milli \meter})
+%     \label{max_disp}
+% \end{equation}
+% To avoid hinge yielding a mechanical stopper is positioned in the horizontal bar. To save space and weight, the stopper is also used for the connection of the threaded part of the probe. The focus draw on the probe ending is reported in Figure \ref{probe_zoom}.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[scale=0.28]{immagini/probe_zoom.png}
+%     \caption{Detail of the mechanical stopper configuration to avoid overtraveling }
+%     \label{probe_zoom}
+% \end{figure}
+
+% \subsection{Impulse step verifications}
+% Another important parameter to dynamical behaviour evaluation is the step response. The input step amplitude is equal to half the measurement range, because it is considered the preload (and the relative pre-displacement) necessary to ensure the contact. The time necessary at the output to achieve the steady condition is $T_{step}$ = 9 (\si{\milli \second}). 
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[scale=0.15]{immagini/impulse_response.png}
+%     \caption{Impulse response of the system while it is stimulated with an input displacement of half the measurement range}
+%     \label{impulse_response}
+% \end{figure}
+
+% \subsection{Normal force input}
+% The last verification regards lateral sensitivity, so the displacement produced by a force applied on a direction perpendicular to the measurement one. To have a high lateral stiffness is important to ensure the straightness of motion and in general to avoid undesired displacements produced by possible normal forces. \\
+% Since forces exchanged between the compound and the surface in this direction are not the main ones, it is assumed they are one order of magnitude smaller than the other. 
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[scale=0.1]{immagini/lateral_stiffness.png}
+%     \caption{Displacements in normal directions when a force is applied on them. \textit{y} direction is the vertical one, while \textit{z} is orthogonal to the plane where the DC is placed}
+%     \label{lateral_stiffness}
+% \end{figure} \noindent
+% Performing the results regression, the lateral stiffness could be computed as the ratio between the force and the displacement. The resulting lateral stiffness are $k_z$=5 (\si{\newton\per\milli\meter}) and $k_y$=116 (\si{\newton\per\milli\meter}). These values are not very high in absolute value, but also the lateral forces are generally small.
+
+
+% %\thispagestyle{empty}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

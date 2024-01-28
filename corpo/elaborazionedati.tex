@@ -1,0 +1,85 @@
+\section{Elaborazione dei dati}
+Ogni squadra, al termine dell'esperienza, ha condiviso i propri valori ricavati, in modo da creare un database con tutti i dati di ogni rilevazione.\\
+Per svolgere i calcoli, ho utilizzato LibreOffice Calc.\\
+In modo da rendere queste spiegazioni sui calcoli più generiche possibili, ho omesso di indicare le conversioni tra unità di misura, potendo essere diverse da rilevamento a rilevamento. Resta il fatto che i calcoli sono stati fatti mantenendo una coerenza sulle unità di misura.
+\subsection{Cavallettamento totale}
+Sono stati sommati i conteggi di ogni singolo albero, suddivisi per classe diametrica, delle due sottoparticelle, per trovare la numerazione dell'intera particella est. Poi, è stata calcolata l'area basimetrica unitaria di ogni classe diametrica, e moltiplicata quindi per il conteggio totale di ogni classe. In questo modo si è ottenuta l'area basimetrica totale della particella, per ogni classe diametrica centimetrica. La somma di questi valori, porta all'area basimetrica totale dell'area.
+Rapportando quest'ultimo valore con l'area di saggio, si ricava l'area basimetrica all'ettaro.\\
+Sommando ogni frequenza di classe diametrica, si ricava il numero totale di alberi rilevati. Questo valore, diviso per l'area d'interesse, indica la densità di alberi all'ettaro.\\
+Il rapporto tra l'area basimetrica all'ettaro e la frequenza all'ettaro, è il valore medio di area basimetrica. Da questo valore medio, utilizzando la formula dell'area del cerchio, è possibile calcolare il diametro medio complessivo.\\
+Per capire com'è distribuito il popolamento, le frequenze degli alberi sono state suddivise per classi diametriche di 5 cm e rappresentate in un istogramma.
+\subsection{Aree di saggio con raggio fisso}
+Per questa modalità di rilevazione, i calcoli sono stati svolti analizzando le singole aree di saggio, 16 in totale, e infine calcolato il valore totale.\\
+E' stata calcolata l'area basimetrica di ogni singola classe diametrica, moltiplicando la frequenza e l'area basimetrica unitaria relativa. Sono state sommate le aree basimetriche di ogni singola  classe diametrica, per trovare l'area basimetrica totale. Dividendo questo valore per l'area di saggio totale, si ricava l'area basimetrica a ettaro.\\
+Sommando tutte le frequenze di valori, si trova il numero complessivo di alberi presenti nelle aree di saggio. Rapportando questo valore con l'area totale delle aree di saggio si ricava il numero di soggetti a ettaro.\\
+Rapportando l'area basimetrica a ettaro e la densità a ettaro di ogni singola area di saggio, si ricava l'area basimetrica a ettaro. Infine, da questo valore, si è ricavato il diametro medio del popolamento.\\
+I valori della numerosità sono stati suddivisi in classi di 5 cm.\\
+Per calcolare i parametri della totalità della particella, è necessario mediare i valori di ogni singola area di saggio. Occorrà quindi trovare la media dei valori di: numerosità totale e a ettaro, area basimetrica totale e a ettaro, area basimetrica media, diametro medio e numerosità per classe diametrica.\\
+Dalla numerosità dell'area, suddivisa per classe diametrica di 5 cm, è possibile creare un istogramma, in modo da rappresentare la distribuzione del popolamento dell'area in esame.\\
+\subsection{Aree relascopiche diametriche}
+Come per le aree di saggio circolari, anche per questo studio i calcoli sono stati fatti singolarmente per ogni area di saggio.\\
+Il calcolo dell'area basimetrica a ettaro è stato svolto moltiplicando la numerosità totale della sezione, per il fattore di numerazione precedentemente scelto (nel nostro caso è 2).\\
+Per il calcolo della numerosità di ogni singola classe diametrica all'ettaro, occorre moltiplicare la numerosità per il fattore di numerazione, rapportando il tutto per l'area basimetrica unitaria. La somma di tutte queste singole  numerosità indica la numerosità all'ettaro complessiva.\\
+Per calcolare l'area basimetrica media, occorre rapportare l'area basimetrica all'ettaro e la numerosità all'ettaro. Come per gli altri calcoli, è possibile ricavare il diametro medio della popolazione.\\
+Come per gli altri metodi, anche in questo caso la numerosità dei campioni è stata suddivisa in classi di 5 cm, in modo da creare un istogramma delle distribuzioni e ricavare informazioni sul popolamento.
+\subsection{Altezze e curve diametriche}
+Avendo alcune misure campionarie circa l'altezza degli alberi, con relativo valore diametrico, è possibile creare la curva ipsodiametrica relativa al popolamento.\\
+La curva è stata realizzata grazie alla funzione di creazione grafici di Calc (o come per qualsiasi altro programma di fogli elettronici). Oltre al plot del grafico, il programma permette di ricavare la funzione interpolante e il valore di dispersione dei dati (parametro $R^2$). Le funzioni interpolanti maggiormente utilizzate sono la logaritmica e l'esponenziale di secondo grado.\\
+Avendo la funzione della curva interpolante e il valore del diametro medio del popolamento (calcolato con uno dei tre metodi precedentemente indicati), è possibile calcolare l'altezza media. Questo valore, di fatto, indica l'altezza riferita al soggetto di diametro medio del popolamento.\\
+Nel caso del popolamento ovest, dove i dati delle conifere sono pochi, si è preferito estrapolare il valore mediano della serie. Si evita di calcolare il valore medio, in quanto una bassa frequenza di dati porterebbe ad errori notevoli.\\
+Utilizzando il parametro $R^2$ è possibile capire di quanto i valori misurati siano dispersi; un valore prossimo ad 1 indica misurazioni poco disperse, mentre se prossimo a 0, i dati sono molto dispersi.
+\subsection{Volumi}
+Al fine di conoscere il parametro volumetrico della popolazione, occorre avere a disposizione alcune informazioni, come la densità di popolazione, l'altezza media e la tipologia arborea.\\
+Con il metodo delle tavole Ravenna, occorre ricavare dalle relative tabelle il valore del volume unitario e successivamente moltiplicarlo per la densità a ettaro.
+\begin{table}[H]
+\caption{Volume unitario, secondo le tavole Ravenna, degli alberi suddivisi per specie arborea. Le unità di misura sono cm per i diametri e $m^3$ per i volumi.}
+\centering
+\begin{tabular}{cccc}
+\toprule
+classe diam. & P pinea & P pinaster & Latif  \\
+\midrule
+20 & 0.1524  & 0.1524     & 0.2199 \\
+25 & 0.2832  & 0.2832     & 0.3436 \\
+30 & 0.4478  & 0.4478     & 0.4948 \\
+35 & 0.6534  & 0.6534     & 0.6735 \\
+40 & 0.8590  & 0.8590     &        \\
+45 & 1.0646  & 1.0646     &        \\
+50 & 1.2702  & 1.2702     &        \\
+55 & 1.4758  & 1.4758     &        \\
+60 & 1.6814  & 1.6814     &        \\
+65 & 1.887   & 1.887      &        \\
+70 & 2.0926  & 2.0926     &        \\
+75 & 2.2982  & 2.2982     &        \\
+80 & 2.5038  & 2.5038     &        \\
+\bottomrule
+\end{tabular}
+\label{table:volume_ravenna_ovest}
+\end{table}
+Un altro metodo di calcolo è quello che utilizza le formule Tabacchi. Il valore di volume unitario dei pini, si ricava conoscendo due appropriati coefficienti, l'altezza media e diametro medio, secondo la formula: 
+\begin{equation}
+    v = b_1 \cdot b_2 d^2 h \label{Formula_tabacchi}
+\end{equation}
+oppure, per le latifoglie:
+\begin{equation}
+    v = b_1 \cdot b_2 d^2 h + b_3 d
+\end{equation}
+
+Applicando la formula Tabacchi \ref{Formula_tabacchi}, con gli opportuni coefficienti, è possibile calcolare il volume unitario di ogni tipologia di alberi presente nella particella. Per ottenere il risultato in $m^3$, occorre dividere il risultato trovato per 1000, utilizzando i cm per i diametri e i m per le altezze.
+\begin{table}[H]
+\caption{Coefficienti estratti dalle Tavole Tabacchi}
+\centering
+\begin{tabular}{ccccc}
+\toprule
+Specie & $b_1$ & $b_2$ & $b_3$\\
+\midrule
+Pino domestico & $-4,0404 \cdot 10^{-1}$   & $4,1113 \cdot 10^{-2}$  &\\
+Pino marittimo & $2,9963$  & $3,8302 \cdot 10^{-2}$  &\\
+Latifoglia       &  $-2,2219$  & $3,9685 \cdot 10^{-2}$ & $6,2762 \cdot 10^{-1}$ \\
+
+\bottomrule
+\end{tabular}
+\label{tab:coeff_tabacchi}
+\end{table}
+
+In tutte e due le particelle, sono stati utilizzati i valori di densità calcolati secondo il metodo del cavallettamento totale.\\
+Per il valore delle altezze, si utilizza quella ricavabile dalla formula della curva ipsometrica.
